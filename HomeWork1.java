@@ -68,7 +68,7 @@ public class HomeWork1 {
     }
 
     private static int[] eighth(int[] arr) {
-        int[] ou = new int[arr.length - 1];
+        int[] ou = new int[arr.length];
         boolean found = false;
 
         for (int i = 0; i < arr.length; i++)
@@ -76,6 +76,9 @@ public class HomeWork1 {
                 found = true;
             else 
                 ou[i - (found ? 1 : 0)] = arr[i];
+
+        if (found)
+            ou = Arrays.copyOf(ou, ou.length - 1);
 
         return ou;
     }
